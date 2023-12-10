@@ -1,0 +1,11 @@
+compute:
+  hosts:
+    thyme.matthias.haus
+storage:
+  hosts:
+    mace.matthias.haus
+
+ninth:
+  children:
+    compute:
+    storage:

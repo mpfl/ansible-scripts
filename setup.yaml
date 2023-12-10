@@ -1,0 +1,22 @@
+- name: Setup new server
+  hosts: ninth
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+      become: true
+
+    - name: Install aptitude
+      ansible.builtin.apt:
+        pkg:
+          - aptitude
+
+    - name: Install important packages
+      ansible.builtin.apt:
+        pkg:
+          - git
+          - cockpit
+          - curl
+          - wget
+      become: true
+
